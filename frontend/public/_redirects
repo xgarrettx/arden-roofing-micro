@@ -1,0 +1,63 @@
+# 301 redirects from the old static microsite's flat .html URLs to the
+# rebuilt site's routes. Netlify/Cloudflare Pages read this file as-is;
+# for Vercel, port these into vercel.json's "redirects" array; for
+# nginx, translate each line into a `rewrite ... permanent;` rule.
+# Without this, cutting over would drop 35+ location pages' backlinks
+# and existing Google rankings on launch day.
+
+/index.html  /  301!
+/about.html  /about  301!
+/services.html  /services  301!
+/roofing-repair.html  /services/repair  301!
+/roofing-install.html  /services/install  301!
+/roofing-replacement.html  /services/replacement  301!
+/service-areas.html  /service-areas  301!
+/contact.html  /contact  301!
+/estimate.html  /estimate  301!
+/faq.html  /faq  301!
+/meet-the-team.html  /team  301!
+/careers.html  /careers  301!
+/thank-you.html  /thank-you  301!
+/privacy-policy.html  /legal/privacy-policy  301!
+/terms-conditions.html  /legal/terms-conditions  301!
+/disclaimer.html  /legal/disclaimer  301!
+/accessibility.html  /legal/accessibility  301!
+/complaints-policy.html  /legal/complaints-policy  301!
+/referral-marketing-disclosure.html  /legal/referral-marketing-disclosure  301!
+
+# Location (service-area) pages
+/roofing-replacement-and-repair-in-alexander.html  /service-areas/alexander  301!
+/roofing-replacement-and-repair-in-arden.html  /service-areas/arden  301!
+/roofing-replacement-and-repair-in-asheville.html  /service-areas/asheville  301!
+/roofing-replacement-and-repair-in-avery-creek.html  /service-areas/avery-creek  301!
+/roofing-replacement-and-repair-in-barnardsville.html  /service-areas/barnardsville  301!
+/roofing-replacement-and-repair-in-beaverdam.html  /service-areas/beaverdam  301!
+/roofing-replacement-and-repair-in-bent-creek.html  /service-areas/bent-creek  301!
+/roofing-replacement-and-repair-in-biltmore-forest.html  /service-areas/biltmore-forest  301!
+/roofing-replacement-and-repair-in-biltmore-village.html  /service-areas/biltmore-village  301!
+/roofing-replacement-and-repair-in-biltmore.html  /service-areas/biltmore  301!
+/roofing-replacement-and-repair-in-black-mountain.html  /service-areas/black-mountain  301!
+/roofing-replacement-and-repair-in-candler.html  /service-areas/candler  301!
+/roofing-replacement-and-repair-in-canton.html  /service-areas/canton  301!
+/roofing-replacement-and-repair-in-downtown-asheville.html  /service-areas/downtown-asheville  301!
+/roofing-replacement-and-repair-in-east-asheville.html  /service-areas/east-asheville  301!
+/roofing-replacement-and-repair-in-enka.html  /service-areas/enka  301!
+/roofing-replacement-and-repair-in-fairview.html  /service-areas/fairview  301!
+/roofing-replacement-and-repair-in-fletcher.html  /service-areas/fletcher  301!
+/roofing-replacement-and-repair-in-hawk-creek.html  /service-areas/hawk-creek  301!
+/roofing-replacement-and-repair-in-hendersonville.html  /service-areas/hendersonville  301!
+/roofing-replacement-and-repair-in-kenilworth.html  /service-areas/kenilworth  301!
+/roofing-replacement-and-repair-in-leicester.html  /service-areas/leicester  301!
+/roofing-replacement-and-repair-in-mars-hill.html  /service-areas/mars-hill  301!
+/roofing-replacement-and-repair-in-marshall.html  /service-areas/marshall  301!
+/roofing-replacement-and-repair-in-mills-river.html  /service-areas/mills-river  301!
+/roofing-replacement-and-repair-in-montreat.html  /service-areas/montreat  301!
+/roofing-replacement-and-repair-in-north-asheville.html  /service-areas/north-asheville  301!
+/roofing-replacement-and-repair-in-oakley.html  /service-areas/oakley  301!
+/roofing-replacement-and-repair-in-reynolds.html  /service-areas/reynolds  301!
+/roofing-replacement-and-repair-in-skyland.html  /service-areas/skyland  301!
+/roofing-replacement-and-repair-in-south-asheville.html  /service-areas/south-asheville  301!
+/roofing-replacement-and-repair-in-swannanoa.html  /service-areas/swannanoa  301!
+/roofing-replacement-and-repair-in-weaverville.html  /service-areas/weaverville  301!
+/roofing-replacement-and-repair-in-west-asheville.html  /service-areas/west-asheville  301!
+/roofing-replacement-and-repair-in-woodfin.html  /service-areas/woodfin  301!

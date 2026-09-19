@@ -1,0 +1,26 @@
+{
+  "intro": "Arden Roofing is built around a small local team that stays close to the work and keeps communication practical from the first conversation through the final cleanup.",
+  "members": [
+    {
+      "display_order": 0,
+      "initials": "CW",
+      "name": "Caleb Whitaker",
+      "role": "Owner",
+      "bio": "Caleb grew up south of Asheville and started in roofing on local residential crews before moving into repair work, estimating, and project leadership. He still enjoys being on-site when a complicated leak needs to be traced, and outside of work he spends many fall weekends hiking sections of the Blue Ridge Parkway with his wife and young son."
+    },
+    {
+      "display_order": 1,
+      "initials": "MG",
+      "name": "Mason Greene",
+      "role": "Project Lead",
+      "bio": "Mason grew up in Henderson County and has a practical eye for roof layout, flashing details, and keeping an active jobsite organized. He is usually the person checking material staging and work sequencing in the morning, and he spends his free time restoring an older pickup in his garage near Fletcher."
+    },
+    {
+      "display_order": 2,
+      "initials": "EB",
+      "name": "Emily Brooks",
+      "role": "Customer & Scheduling Coordinator",
+      "bio": "Emily is an Asheville native who keeps project calendars, homeowner updates, and the moving pieces between estimates and scheduled work from getting lost. She is known in the office for keeping detailed notes, and on weekends she is often at a local trailhead with her rescue dog, June."
+    }
+  ]
+}

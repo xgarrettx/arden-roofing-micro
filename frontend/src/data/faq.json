@@ -1,0 +1,45 @@
+{
+  "meta_title": "Frequently Asked Questions | Arden Roofing",
+  "meta_description": "Answers to common questions about roofing replacement & repair from Arden Roofing in Asheville, NC.",
+  "canonical": "https://ardenroofing.com/faq.html",
+  "h1": "Frequently Asked Questions",
+  "intro": "Straight answers to the questions people ask Arden Roofing most about roofing replacement & repair in Asheville, NC.",
+  "items": [
+    {
+      "question": "How can I tell whether I need roof repair or a full replacement?",
+      "answer_html": "<p>A repair may make sense when damage is confined to one area and the surrounding roof still has useful life. Replacement becomes more likely when shingles are broadly worn, leaks are recurring in different areas, materials are brittle or failing, or the roof has accumulated repeated repairs. An inspection gives you a better basis for comparing the two options.</p>"
+    },
+    {
+      "question": "What are the most common causes of roof leaks around Asheville?",
+      "answer_html": "<p>Common causes include damaged or missing shingles, worn flashing, failing pipe boots, roof-to-wall transitions, valleys, storm damage, and aging materials. Tree debris and heavy rainfall can also expose weak areas. The point where water appears indoors is not always directly below the roof opening.</p>"
+    },
+    {
+      "question": "Can mountain weather shorten the life of a roof?",
+      "answer_html": "<p>Weather exposure can affect how quickly roofing materials age. Western North Carolina roofs may experience strong sun, heavy rain, wind, tree debris, snow or ice events, and repeated temperature changes. The specific impact depends on the roof design, materials, shade, ventilation, and property exposure.</p>"
+    },
+    {
+      "question": "Should I have my roof checked after a strong storm?",
+      "answer_html": "<p>An inspection can be worthwhile if you notice missing shingles, debris impact, water stains, lifted material, or other visible changes after a storm. Some damage is difficult to identify safely from the ground, so avoid climbing onto a steep or wet roof yourself.</p>"
+    },
+    {
+      "question": "How long does roof replacement usually take?",
+      "answer_html": "<p>Many residential roof replacements can be completed within a relatively short construction period, but there is no single timeline for every home. Roof size, pitch, complexity, access, weather, material choice, and unexpected decking conditions can all affect the schedule.</p>"
+    },
+    {
+      "question": "Will you replace damaged roof decking during a roof replacement?",
+      "answer_html": "<p>Removing old roofing allows previously hidden decking conditions to become visible. If deteriorated or unsuitable areas are discovered, the additional work can be discussed as part of the project. The amount cannot always be known before tear-off.</p>"
+    },
+    {
+      "question": "How much does roof repair or replacement cost in the Asheville area?",
+      "answer_html": "<p>Cost varies substantially based on roof size, slope, access, materials, complexity, height, and hidden conditions. Small repairs may cost hundreds of dollars, while complete residential replacements commonly run into the thousands or tens of thousands. A site-specific estimate is the best way to understand the likely cost for your home.</p>"
+    },
+    {
+      "question": "What areas does Arden Roofing serve?",
+      "answer_html": "<p>Arden Roofing serves Arden, Asheville, Hendersonville, Fletcher, Fairview, Black Mountain, Mills River, Weaverville, Candler, Leicester, Swannanoa, Canton, and many surrounding communities across the greater Asheville region.</p>"
+    },
+    {
+      "question": "Still Have a Question?",
+      "answer_html": "<p>Every project is a little different. Call <a class=\"wc-phone\" href=\"tel:8283054838\">(828) 305-4838</a> or email <a href=\"mailto:sales@ardenroofing.com\">sales@ardenroofing.com</a> and we will get back to you. You can also <a data-router-link=\"true\" href=\"/estimate\">request a free estimate</a> and describe what you need.</p>"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+export const ROUTES = {
+  HOME: 'home',
+  ABOUT: 'about',
+  SERVICES_INDEX: 'services-index',
+  SERVICE_DETAIL: 'service-detail',
+  SERVICE_AREAS_INDEX: 'service-areas-index',
+  LOCATION_DETAIL: 'location-detail',
+  CONTACT: 'contact',
+  ESTIMATE: 'estimate',
+  THANK_YOU: 'thank-you',
+  FAQ: 'faq',
+  TEAM: 'team',
+  CAREERS: 'careers',
+  LEGAL: 'legal',
+  NOT_FOUND: 'not-found',
+}

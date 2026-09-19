@@ -1,0 +1,44 @@
+{
+  "service_areas": {
+    "meta_title": "Service Areas | Arden Roofing",
+    "meta_description": "Service Areas | Arden Roofing",
+    "canonical": "https://ardenroofing.com/service-areas.html",
+    "h1": "Service Areas",
+    "intro_html": "<div class=\"section__lead\" style=\"margin-top:18px\"><p>We proudly serve Asheville, NC, including Arden, Asheville, Hendersonville, Fairview, Fletcher, Biltmore, Biltmore Village, West Asheville, South Asheville, Downtown Asheville, North Asheville, East Asheville, Black Mountain, Oakley, Hawk Creek, Mills River, Kenilworth, Beaverdam, Reynolds, Bent Creek, Avery Creek, Biltmore Forest, Candler, Enka, Leicester, Montreat, Skyland, Swannanoa, Weaverville, Woodfin, Alexander, Barnardsville, Marshall, Mars Hill, and Canton. Every town has its own page.</p></div>"
+  },
+  "contact": {
+    "meta_title": "Contact | Arden Roofing",
+    "meta_description": "Contact Arden Roofing by phone, email or through our form for roofing replacement & repair in Asheville, NC.",
+    "canonical": "https://ardenroofing.com/contact.html",
+    "h1": "Contact Arden Roofing",
+    "intro_html": "<p class=\"section__lead\">Questions about your roof? Contact Arden Roofing at <a href=\"mailto:sales@ardenroofing.com\">sales@ardenroofing.com</a> or call <a class=\"wc-phone\" href=\"tel:8283054838\">(828) 305-4838</a> to discuss repair, installation, or replacement.</p>"
+  },
+  "estimate": {
+    "meta_title": "Get an Estimate | Arden Roofing",
+    "meta_description": "Request a free estimate from Arden Roofing",
+    "canonical": "https://ardenroofing.com/estimate.html",
+    "h1": "Get Your Free Estimate",
+    "intro_html": "<p class=\"section__lead\">Questions about your roof? Contact Arden Roofing at <a href=\"mailto:sales@ardenroofing.com\">sales@ardenroofing.com</a> or call <a class=\"wc-phone\" href=\"tel:8283054838\">(828) 305-4838</a> to discuss repair, installation, or replacement.</p>"
+  },
+  "team": {
+    "meta_title": "Meet the Team | Arden Roofing",
+    "meta_description": "Meet the people behind Arden Roofing, the local team handling roofing replacement & repair across Asheville, NC.",
+    "canonical": "https://ardenroofing.com/meet-the-team.html",
+    "h1": "Meet the Team",
+    "intro_html": "<div class=\"section__lead article__lead\"><p>Arden Roofing is built around a small local team that stays close to the work and keeps communication practical from the first conversation through the final cleanup.</p></div>"
+  },
+  "thank_you": {
+    "meta_title": "Thank You | Arden Roofing",
+    "meta_description": "Your request has been received by Arden Roofing.",
+    "canonical": "https://ardenroofing.com/thank-you.html",
+    "h1": "Thank You",
+    "intro_html": "<div class=\"section__lead\" style=\"margin:18px auto 0\"><p>We received your request. A member of the Arden Roofing team will look it over and get back to you, usually within one business day.</p><p>Need help sooner? Call us now and we will pick up or call straight back.</p></div>"
+  },
+  "services_index": {
+    "meta_title": "Our Services | Arden Roofing",
+    "meta_description": "Our Services | Arden Roofing",
+    "canonical": "https://ardenroofing.com/services.html",
+    "h1": "Our Services",
+    "intro_html": "<div class=\"section__lead\" style=\"margin-top:18px\"><p>Whether your roof needs a small repair or a full replacement, Arden Roofing focuses on the work required to keep the home protected without making the process more complicated than it needs to be.</p></div>"
+  }
+}

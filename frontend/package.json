@@ -1,0 +1,37 @@
+{
+  "name": "arden-roofing-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite-ssg build",
+    "preview": "vite preview",
+    "serve:dist": "npx serve dist",
+    "postbuild": "node scripts/generate-sitemap.js"
+  },
+  "dependencies": {
+    "@unhead/vue": "^2.1.2",
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
+    "axios": "^1.7.7",
+    "decimal.js": "^10.4.3",
+    "luxon": "^3.5.0",
+    "mitt": "^3.0.1",
+    "pinia": "^2.2.4",
+    "pinia-plugin-persistedstate": "^3.2.3",
+    "vue": "^3.5.12",
+    "vue-request": "^2.0.4",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "primeflex": "^3.3.1",
+    "primeicons": "^7.0.0",
+    "primevue": "^3.53.1",
+    "remixicon": "^4.5.0",
+    "sass": "^1.79.4",
+    "vite": "^5.4.9",
+    "vite-ssg": "^28.3.0"
+  }
+}

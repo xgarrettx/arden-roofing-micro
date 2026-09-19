@@ -1,0 +1,215 @@
+/* =========================================================
+   Arden Roofing — ported from the original static microsite's
+   assets/style.css. Same design tokens/classes, reused as-is in
+   the Vue templates (PrimeFlex handles ad-hoc layout/spacing;
+   these classes stay because the brand's visual identity —
+   hero treatment, cards, cta-band, article typography — is a
+   deliberate, already-designed system worth keeping intact).
+   ========================================================= */
+
+:root {
+  --brand: #5d1adb;
+  --brand-dark: #1442ad;
+  --ink: #15212e;
+  --ink-soft: #4a5a6a;
+  --line: #e3e8ee;
+  --bg: #ffffff;
+  --bg-alt: #f6f8fa;
+  --bg-dark: #15212e;
+  --max: 1160px;
+  --radius: 10px;
+  --font-head: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* Bring PrimeVue's "lara" theme in line with the brand color so
+     InputText/Dropdown/Textarea/Button/Accordion/Toast all pick it up
+     without per-component overrides. */
+  --primary-color: var(--brand);
+  --primary-color-text: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1.65;
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.12; color: var(--ink); letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.1rem, 5.4vw, 3.5rem); font-weight: 800; }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); font-weight: 800; margin-bottom: 0.55em; }
+h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.35em; letter-spacing: -0.01em; }
+p { margin-bottom: 1rem; color: var(--ink-soft); }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-family: var(--font-body);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn:hover { background: var(--brand-dark); text-decoration: none; color: #fff; }
+.btn--ghost { background: transparent; color: var(--brand); border: 2px solid var(--brand); }
+.btn--ghost:hover { background: var(--brand); color: #fff; }
+.btn--lg { padding: 18px 38px; font-size: 1.05rem; }
+
+.muted { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* ---------- header / nav ---------- */
+.site-header { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 20px; max-width: var(--max); margin: 0 auto; }
+.nav__logo img { max-height: 46px; width: auto; }
+.nav__links { display: flex; align-items: center; gap: 22px; list-style: none; }
+.nav__links a { color: var(--ink); font-weight: 500; font-size: 0.97rem; }
+.nav__links a:hover { color: var(--brand); text-decoration: none; }
+
+.has-dropdown { position: relative; }
+.dropdown {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  min-width: 250px; padding: 8px 0; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+.has-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 14px; display: none; }
+.has-dropdown:hover::after { display: block; }
+.has-dropdown:hover .dropdown { display: block; }
+.dropdown li { list-style: none; }
+.dropdown a { display: block; padding: 9px 18px; font-size: 0.92rem; }
+.dropdown a:hover { background: var(--bg-alt); }
+
+.nav__call { background: var(--brand); color: #fff !important; padding: 10px 18px; border-radius: var(--radius); font-weight: 600; }
+.nav__call:hover { background: var(--brand-dark); text-decoration: none; }
+
+.nav__toggle { display: none; background: none; border: 0; font-size: 1.6rem; cursor: pointer; color: var(--ink); }
+@media (max-width: 900px) {
+  .nav__links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: #fff; border-bottom: 1px solid var(--line); padding: 10px 20px;
+  }
+  .nav__links.open { display: flex; }
+  .nav__links li { width: 100%; padding: 8px 0; }
+  .dropdown { position: static; display: block; box-shadow: none; border: 0; padding: 4px 0 4px 14px; min-width: 0; }
+  .nav__toggle { display: block; }
+}
+
+/* ---------- hero ---------- */
+.hero { position: relative; color: #fff; }
+.hero__media { position: absolute; inset: 0; z-index: 0; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(21, 33, 46, 0.55), rgba(21, 33, 46, 0.78)); z-index: 1; }
+.hero__inner { position: relative; z-index: 2; max-width: var(--max); margin: 0 auto; padding: 90px 20px; }
+.hero__eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; font-weight: 600; opacity: 0.9; }
+.hero h1 { color: #fff; margin: 10px 0 16px; max-width: 18ch; }
+.hero p { color: rgba(255, 255, 255, 0.9); font-size: 1.15rem; max-width: 46ch; }
+.hero__cta { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+/* ---------- sections ---------- */
+.section { padding: 64px 0; }
+.section--alt { background: var(--bg-alt); }
+.section--dark { background: var(--bg-dark); color: #fff; }
+.section--dark h2, .section--dark h3 { color: #fff; }
+.section--dark p { color: rgba(255, 255, 255, 0.82); }
+.section__lead { max-width: 65ch; }
+.center { text-align: center; }
+.center .section__lead { margin: 0 auto; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 28px; } }
+
+.grid { display: grid; gap: 24px; }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) { .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; } }
+
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+.section--alt .card { background: #fff; }
+.card h3 { margin-bottom: 0.4em; }
+.card p:last-child { margin-bottom: 0; }
+
+.linklist { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; list-style: none; }
+@media (max-width: 800px) { .linklist { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .linklist { grid-template-columns: 1fr; } }
+.linklist a { display: block; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--ink); font-weight: 600; }
+.linklist a:hover { border-color: var(--brand); color: var(--brand); text-decoration: none; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 0.96rem; }
+th { background: var(--bg-alt); font-family: var(--font-body); font-weight: 700; color: var(--ink); }
+tr:last-child td { border-bottom: 0; }
+
+/* FAQ accordion — PrimeVue's AccordionTab renders its own header button,
+   these rules just bring it visually in line with the rest of the site. */
+.faq :deep(.p-accordion-header-link) { font-family: var(--font-head); font-weight: 600; font-size: 1.1rem; padding: 16px 20px; }
+.faq :deep(.p-accordion-tab) { margin-bottom: 12px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.faq :deep(.p-accordion-content) { padding: 0 20px 16px; }
+
+.cta-band { background: var(--brand); color: #fff; text-align: center; padding: 56px 20px; }
+.cta-band h2 { color: #fff; }
+.cta-band p { color: rgba(255, 255, 255, 0.9); }
+.cta-band .btn { background: #fff; color: var(--brand); }
+.cta-band .btn:hover { background: #f0f3f7; }
+
+/* ---------- estimate / contact form ---------- */
+.form-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: var(--ink); }
+.field :deep(.p-inputtext),
+.field :deep(.p-dropdown),
+.field :deep(textarea) {
+  width: 100%;
+}
+.field-error { color: #d0342c; font-size: 0.85rem; margin-top: 4px; }
+
+/* ---------- footer ---------- */
+.site-footer { background: var(--bg-dark); color: rgba(255, 255, 255, 0.8); padding: 56px 0 28px; }
+.site-footer h4 { color: #fff; margin-bottom: 14px; font-family: var(--font-body); font-size: 1rem; letter-spacing: 0.02em; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; }
+@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+.site-footer ul { list-style: none; }
+.site-footer li { margin-bottom: 9px; }
+.site-footer a { color: rgba(255, 255, 255, 0.8); font-size: 0.93rem; }
+.site-footer a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.15); margin-top: 40px; padding-top: 20px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }
+.footer-disclaimer { font-size: 0.82rem; color: rgba(255, 255, 255, 0.55); margin-top: 10px; line-height: 1.5; }
+
+/* ---------- article pages (about, FAQ, team, careers, legal) ---------- */
+.article { max-width: 820px; }
+.article h1 { margin-bottom: 14px; }
+.article h2 { margin-top: 40px; }
+.article h3 { margin-top: 26px; }
+.article ul, .article ol { margin: 0 0 1rem 1.3em; color: var(--ink-soft); }
+.article li { margin-bottom: 0.45rem; }
+.article__date { margin-top: -4px; }
+.faq-page h2 { font-size: 1.35rem; margin-top: 34px; }
+.contact-list { list-style: none; margin: 22px 0; }
+.contact-list li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.contact-list li:last-child { border-bottom: 0; }
+.team-grid { margin-top: 24px; }
+.team-card .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 14px; }
+.team-card .role { color: var(--brand); font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
+
+/* phone link — stable hook if a call-tracking script is added later */
+.wc-phone { font-weight: 700; }
