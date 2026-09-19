@@ -3,6 +3,13 @@
 // is listed without hand-maintaining the list. Also writes dist/robots.txt.
 import { writeFileSync } from 'fs'
 import { resolve } from 'path'
+// This runs as a plain `node` process via the "postbuild" npm script, not
+// through Vite — so unlike the vite-ssg build step itself, it does NOT get
+// .env values injected automatically (that's Vite's own doing, exposed as
+// import.meta.env.* only during the Vite-driven build). Load the same .env
+// file directly so this script sees the real VITE_API_URL/VITE_SITE_ORIGIN
+// instead of silently falling back to the hardcoded dev defaults below.
+import 'dotenv/config'
 
 const apiUrl = process.env.VITE_API_URL || 'http://127.0.0.1:3001'
 const siteOrigin = process.env.VITE_SITE_ORIGIN || 'https://ardenroofing.com'
