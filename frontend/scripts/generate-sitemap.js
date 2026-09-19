@@ -11,7 +11,11 @@ import { resolve } from 'path'
 // instead of silently falling back to the hardcoded dev defaults below.
 import 'dotenv/config'
 
-const apiUrl = process.env.VITE_API_URL || 'http://127.0.0.1:3001'
+// Same reasoning as vite.config.js's includedRoutes: this fetch runs on the
+// build machine and should hit the backend directly rather than round-trip
+// through the public domain. The URLs actually written into sitemap.xml
+// still use siteOrigin (VITE_SITE_ORIGIN) below, unaffected by this.
+const apiUrl = process.env.VITE_BUILD_API_URL || process.env.VITE_API_URL || 'http://127.0.0.1:3001'
 const siteOrigin = process.env.VITE_SITE_ORIGIN || 'https://ardenroofing.com'
 const distDir = resolve(process.cwd(), 'dist')
 

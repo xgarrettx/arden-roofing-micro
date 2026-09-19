@@ -9,7 +9,14 @@ const articles = JSON.parse(readFileSync(resolve(__dirname, './src/data/articles
 
 export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
-  const apiUrl = process.env.VITE_API_URL || 'http://127.0.0.1:3001'
+  // Build-time route enumeration (includedRoutes below) fetches from the
+  // backend to know which /service-areas/* and /services/* pages exist. This
+  // runs ON THE BUILD MACHINE, which is normally the same server the backend
+  // runs on — so it should hit it over localhost, not round-trip through the
+  // public domain (and whatever CDN/proxy sits in front of it). VITE_API_URL
+  // is what ships to the *browser* bundle and must stay the public URL;
+  // VITE_BUILD_API_URL is a separate, build-only override for this fetch only.
+  const apiUrl = process.env.VITE_BUILD_API_URL || process.env.VITE_API_URL || 'http://127.0.0.1:3001'
 
   return defineConfig({
     plugins: [vue()],
