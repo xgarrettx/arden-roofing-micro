@@ -12,5 +12,6 @@ export const ROUTES = {
   TEAM: 'team',
   CAREERS: 'careers',
   LEGAL: 'legal',
+  QUOTE: 'quote',
   NOT_FOUND: 'not-found',
 }

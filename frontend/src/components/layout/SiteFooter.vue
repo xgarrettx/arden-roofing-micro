@@ -5,6 +5,7 @@ import { SITE } from '@/global/consts/site.consts'
 
 const legalLinks = [
   { label: 'Privacy Policy', slug: 'privacy-policy' },
+  { label: 'California Privacy Rights', slug: 'california-privacy' },
   { label: 'Terms & Conditions', slug: 'terms-conditions' },
   { label: 'Referral Marketing Disclosure', slug: 'referral-marketing-disclosure' },
   { label: 'Disclaimer', slug: 'disclaimer' },
@@ -37,6 +38,7 @@ const year = new Date().getFullYear()
             <li><RouterLink :to="{ name: ROUTES.SERVICE_AREAS_INDEX }">Service Areas</RouterLink></li>
             <li><RouterLink :to="{ name: ROUTES.CONTACT }">Contact</RouterLink></li>
             <li><RouterLink :to="{ name: ROUTES.ESTIMATE }">Get an Estimate</RouterLink></li>
+            <li><RouterLink :to="{ name: ROUTES.QUOTE }">Get a Free Quote</RouterLink></li>
             <li><RouterLink :to="{ name: ROUTES.FAQ }">FAQ</RouterLink></li>
           </ul>
         </div>

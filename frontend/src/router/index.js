@@ -42,6 +42,11 @@ export const routes = [
     component: () => import('@/pages/EstimatePage.vue'),
   },
   {
+    path: '/quote',
+    name: ROUTES.QUOTE,
+    component: () => import('@/pages/QuotePage.vue'),
+  },
+  {
     path: '/thank-you',
     name: ROUTES.THANK_YOU,
     component: () => import('@/pages/ThankYouPage.vue'),
