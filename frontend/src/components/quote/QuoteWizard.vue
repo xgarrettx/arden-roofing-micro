@@ -119,7 +119,6 @@ const BUTTON_STEP_CONFIG = {
     <!-- Steps 2+: banner + progress ring layout -->
     <div v-else class="quote-wizard__banner-layout">
       <div class="quote-wizard__banner">
-        <button type="button" class="quote-wizard__back" @click="goBack">&lsaquo; Back</button>
         <h1 class="quote-wizard__banner-h1">Let's Find The Right Roofing Solution For Your Home</h1>
         <div class="quote-wizard__ring" :style="{ '--progress': progressPercent }">
           <span class="quote-wizard__ring-value">{{ progressPercent }}%</span>
@@ -144,6 +143,11 @@ const BUTTON_STEP_CONFIG = {
               <span class="quote-wizard__option-check" aria-hidden="true">&#10003;</span>
             </button>
           </div>
+
+          <div class="quote-wizard__nav">
+            <button type="button" class="quote-wizard__btn quote-wizard__btn--back" @click="goBack">&lsaquo; Back</button>
+            <button type="button" class="quote-wizard__btn quote-wizard__btn--primary" @click="goNext">Continue &rsaquo;</button>
+          </div>
         </template>
 
         <!-- Address step -->
@@ -163,7 +167,11 @@ const BUTTON_STEP_CONFIG = {
               <input v-model="form.city" class="quote-wizard__input" type="text" placeholder="City" aria-label="City" />
               <input v-model="form.state" class="quote-wizard__input" type="text" placeholder="State" aria-label="State" />
             </div>
-            <button type="submit" class="quote-wizard__btn quote-wizard__btn--primary">Next &rsaquo;</button>
+
+            <div class="quote-wizard__nav">
+              <button type="button" class="quote-wizard__btn quote-wizard__btn--back" @click="goBack">&lsaquo; Back</button>
+              <button type="submit" class="quote-wizard__btn quote-wizard__btn--primary">Continue &rsaquo;</button>
+            </div>
           </form>
         </template>
 
@@ -178,10 +186,6 @@ const BUTTON_STEP_CONFIG = {
 
             <!-- Honeypot — visually hidden, real users never see/fill it -->
             <input v-model="form.website" class="quote-wizard__honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-            <button type="submit" class="quote-wizard__btn quote-wizard__btn--primary" :disabled="submitting">
-              {{ submitting ? 'Submitting&hellip;' : 'Get Estimates' }}
-            </button>
 
             <p class="quote-wizard__tcpa">
               By clicking &ldquo;Get Estimates,&rdquo; I provide my electronic signature and consent to receive
@@ -200,6 +204,13 @@ const BUTTON_STEP_CONFIG = {
               <a :href="QUOTE_LEGAL_LINKS.termsOfUse" target="_blank" rel="noopener noreferrer">Terms of Use</a>,
               including any applicable arbitration provisions.
             </p>
+
+            <div class="quote-wizard__nav">
+              <button type="button" class="quote-wizard__btn quote-wizard__btn--back" @click="goBack" :disabled="submitting">&lsaquo; Back</button>
+              <button type="submit" class="quote-wizard__btn quote-wizard__btn--primary" :disabled="submitting">
+                {{ submitting ? 'Submitting&hellip;' : 'Get Estimates' }}
+              </button>
+            </div>
           </form>
         </template>
 
@@ -224,15 +235,15 @@ const BUTTON_STEP_CONFIG = {
   --qw-muted: #5b6472;
   --qw-border: #d8dee5;
   --qw-bg-card: #ffffff;
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 40px 16px 64px;
+  padding: 8px 16px 24px;
 }
 
 .quote-wizard__card {
   background: var(--qw-bg-card);
   border-radius: 14px;
-  padding: 32px 28px;
+  padding: 44px 48px;
   box-shadow: 0 4px 24px rgba(20, 30, 50, 0.08);
 }
 
@@ -241,25 +252,26 @@ const BUTTON_STEP_CONFIG = {
 }
 
 .quote-wizard__h1 {
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-weight: 800;
   color: var(--qw-text);
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  line-height: 1.15;
 }
 
 .quote-wizard__subtext {
   color: var(--qw-muted);
-  margin: 0 0 24px;
-  font-size: 1.05rem;
+  margin: 0 0 28px;
+  font-size: 1.2rem;
 }
 
 .quote-wizard__zip-form,
 .quote-wizard__form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   margin: 0 auto;
-  max-width: 480px;
+  max-width: 600px;
 }
 
 .quote-wizard__row {
@@ -276,8 +288,8 @@ const BUTTON_STEP_CONFIG = {
   box-sizing: border-box;
   border: 1px solid var(--qw-border);
   border-radius: 10px;
-  padding: 16px 18px;
-  font-size: 1rem;
+  padding: 18px 20px;
+  font-size: 1.1rem;
   color: var(--qw-text);
 }
 
@@ -295,8 +307,8 @@ const BUTTON_STEP_CONFIG = {
 .quote-wizard__btn {
   border: none;
   border-radius: 10px;
-  padding: 16px 20px;
-  font-size: 1.1rem;
+  padding: 18px 24px;
+  font-size: 1.2rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -315,17 +327,47 @@ const BUTTON_STEP_CONFIG = {
   cursor: not-allowed;
 }
 
+.quote-wizard__btn--back {
+  background: #fff;
+  border: 2px solid var(--qw-accent);
+  color: var(--qw-accent-dark);
+  padding: 16px 24px;
+}
+
+.quote-wizard__btn--back:hover {
+  background: rgba(47, 158, 68, 0.08);
+}
+
+.quote-wizard__btn--back:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quote-wizard__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 600px;
+  margin: 24px auto 0;
+}
+
+.quote-wizard__nav .quote-wizard__btn--primary {
+  margin-left: auto;
+}
+
 .quote-wizard__error {
   color: #b42318;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 10px 0 0;
   text-align: center;
 }
 
 .quote-wizard__security {
-  margin: 18px 0 0;
+  margin: 20px 0 0;
   color: var(--qw-muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -340,29 +382,29 @@ const BUTTON_STEP_CONFIG = {
 }
 
 .quote-wizard__how-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 }
 
 .quote-wizard__how-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
   text-align: center;
 }
 
 .quote-wizard__how-card {
   border: 1px solid var(--qw-border);
   border-radius: 12px;
-  padding: 18px 14px;
-  font-size: 0.92rem;
+  padding: 22px 18px;
+  font-size: 1.05rem;
   color: var(--qw-text);
 }
 
 .quote-wizard__how-icon {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 2.1rem;
+  margin-bottom: 12px;
 }
 
 .quote-wizard__banner-layout {
@@ -371,34 +413,20 @@ const BUTTON_STEP_CONFIG = {
 
 .quote-wizard__banner {
   position: relative;
-  background: linear-gradient(135deg, var(--qw-primary), var(--qw-primary-dark));
   color: #fff;
   border-radius: 14px 14px 0 0;
-  padding: 40px 24px 60px;
+  padding: 40px 24px 68px;
   text-align: center;
 }
 
-.quote-wizard__back {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  color: #fff;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
 .quote-wizard__banner-h1 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 800;
-  margin: 8px 0 24px;
+  margin: 8px 0 28px;
 }
 
 .quote-wizard__ring {
-  --size: 110px;
+  --size: 128px;
   width: var(--size);
   height: var(--size);
   margin: 0 auto;
@@ -422,35 +450,35 @@ const BUTTON_STEP_CONFIG = {
 }
 
 .quote-wizard__ring-value {
-  font-size: 1.4rem;
+  font-size: 1.65rem;
   font-weight: 800;
   color: var(--qw-primary);
 }
 
 .quote-wizard__ring-label {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
   color: var(--qw-muted);
 }
 
 .quote-wizard__banner-layout .quote-wizard__card {
-  margin-top: -30px;
+  margin-top: -38px;
   border-radius: 14px;
 }
 
 .quote-wizard__question {
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--qw-text);
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   text-align: center;
 }
 
 .quote-wizard__options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 480px;
+  gap: 14px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -460,9 +488,9 @@ const BUTTON_STEP_CONFIG = {
   justify-content: space-between;
   border: 1px solid var(--qw-border);
   border-radius: 10px;
-  padding: 16px 18px;
+  padding: 20px 22px;
   background: #fff;
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--qw-text);
   cursor: pointer;
   text-align: left;
@@ -495,10 +523,10 @@ const BUTTON_STEP_CONFIG = {
 }
 
 .quote-wizard__tcpa {
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  line-height: 1.55;
   color: var(--qw-muted);
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .quote-wizard__tcpa a {
@@ -512,6 +540,18 @@ const BUTTON_STEP_CONFIG = {
   }
   .quote-wizard__row {
     flex-direction: column;
+  }
+  .quote-wizard__card {
+    padding: 28px 20px;
+  }
+  .quote-wizard__h1 {
+    font-size: 2rem;
+  }
+  .quote-wizard__banner-h1 {
+    font-size: 1.6rem;
+  }
+  .quote-wizard__question {
+    font-size: 1.35rem;
   }
 }
 </style>
