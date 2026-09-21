@@ -88,7 +88,7 @@ useSeoMeta({
           leak investigations to aging roofs that are ready for replacement, we focus on sound preparation,
           dependable materials, and a jobsite that is treated with care.
         </p>
-        <p><RouterLink class="btn" :to="{ name: ROUTES.ESTIMATE }">Get a Free Estimate</RouterLink></p>
+        <p><RouterLink class="btn" :to="{ name: ROUTES.QUOTE }">Get a Free Quote</RouterLink></p>
       </div>
     </div>
   </section>

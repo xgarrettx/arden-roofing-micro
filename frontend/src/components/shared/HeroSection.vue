@@ -9,7 +9,7 @@ defineProps({
   intro: { type: String, default: '' },
   imageSrc: { type: String, default: '/assets/images/hero.jpg' },
   imageAlt: { type: String, required: true },
-  ctaLabel: { type: String, default: 'Get a Free Estimate' },
+  ctaLabel: { type: String, default: 'Get a Free Quote' },
 })
 </script>
 
@@ -23,7 +23,7 @@ defineProps({
       <h1>{{ title }}</h1>
       <p v-if="intro">{{ intro }}</p>
       <div class="hero__cta">
-        <RouterLink class="btn btn--lg" :to="{ name: ROUTES.ESTIMATE }">{{ ctaLabel }}</RouterLink>
+        <RouterLink class="btn btn--lg" :to="{ name: ROUTES.QUOTE }">{{ ctaLabel }}</RouterLink>
         <a class="btn btn--ghost btn--lg wc-phone" :href="SITE.phoneHref" style="color: #fff; border-color: #fff">
           {{ SITE.phoneDisplay }}
         </a>

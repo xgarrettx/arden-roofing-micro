@@ -37,7 +37,6 @@ const year = new Date().getFullYear()
             <li><RouterLink :to="{ name: ROUTES.SERVICES_INDEX }">Our Services</RouterLink></li>
             <li><RouterLink :to="{ name: ROUTES.SERVICE_AREAS_INDEX }">Service Areas</RouterLink></li>
             <li><RouterLink :to="{ name: ROUTES.CONTACT }">Contact</RouterLink></li>
-            <li><RouterLink :to="{ name: ROUTES.ESTIMATE }">Get an Estimate</RouterLink></li>
             <li><RouterLink :to="{ name: ROUTES.QUOTE }">Get a Free Quote</RouterLink></li>
             <li><RouterLink :to="{ name: ROUTES.FAQ }">FAQ</RouterLink></li>
           </ul>

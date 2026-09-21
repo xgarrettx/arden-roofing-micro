@@ -40,10 +40,6 @@ const appStore = useAppStore()
         <li><RouterLink :to="{ name: ROUTES.SERVICE_AREAS_INDEX }" @click="appStore.closeMobileNav">Service Areas</RouterLink></li>
         <li><RouterLink :to="{ name: ROUTES.ABOUT }" @click="appStore.closeMobileNav">About Us</RouterLink></li>
         <li><RouterLink :to="{ name: ROUTES.CONTACT }" @click="appStore.closeMobileNav">Contact</RouterLink></li>
-        <li><RouterLink :to="{ name: ROUTES.ESTIMATE }" @click="appStore.closeMobileNav">Get an Estimate</RouterLink></li>
-        <!-- New: /quote lead-gen wizard. Left alongside the existing
-             /estimate link rather than replacing it — Garrett may want to
-             reconcile these into one primary CTA later. -->
         <li><RouterLink :to="{ name: ROUTES.QUOTE }" class="nav__cta" @click="appStore.closeMobileNav">Get a Free Quote</RouterLink></li>
         <li><a class="nav__call wc-phone" :href="SITE.phoneHref">{{ SITE.phoneDisplay }}</a></li>
       </ul>
